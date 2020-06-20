@@ -1,0 +1,13 @@
+- config:
+    name: "标签名重名返回45157"
+    base_url: ${ENV(URL)}
+
+- test:
+    name: '【006】标签名重名返回45157'
+    api: "api/用户管理/用户标签管理/创建标签.yml"
+    variables:
+      tag_name: "创建标签1"
+    extract:
+      - errcode: content.errcode
+    validate:
+      - eq: [$errcode,45157]

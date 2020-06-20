@@ -1,0 +1,27 @@
+config:
+  name: "VX_api_run_all_cases"
+
+testcases:
+#  - name: "【001】验证正常调用接口获取token值"
+#    testcase: "/testcases/开始开发/获取access_token/【001】验证正常调用接口获取token值.yml"
+#  - name: "【002】验证AppSecret错误或者不存在返回40001.yml"
+#    testcase: "/testcases/开始开发/获取access_token/【002】验证AppSecret错误或者不存在返回40125.yml"
+#  - name: "【003】验证grant_type参数不为client_credential返回40002"
+#    testcase: "/testcases/开始开发/获取access_token/【003】验证grant_type参数不为client_credential返回40002.yml"
+#  - name: "【004】验证AppID返回40013"
+#    testcase: "/testcases/开始开发/获取access_token/【004】验证AppID返回40013.yml"
+
+  - name: "【005】正常创建标签"
+    testcase: "/testcases/用户管理/用户标签管理/创建标签/【005】正常创建标签.yml"
+  - name: "【006】标签名重名返回45157"
+    testcase: "/testcases/用户管理/用户标签管理/创建标签/【006】标签名重名返回45157.yml"
+  - name: "【007】标签名长度超过30个字节返回45158"
+    testcase: "/testcases/用户管理/用户标签管理/创建标签/【007】标签名长度超过30个字节返回45158.yml"
+  - name: "【008】正常查询已创建的标签.yml"
+    testcase: "/testcases/用户管理/用户标签管理/查看标签/【008】正常查询已创建的标签.yml"
+  - name: "【009】不同接口调用实现正常删除已经创建的标签"
+    testcase: "/testcases/用户管理/用户标签管理/删除标签/【009】不同接口调用实现正常删除已经创建的标签.yml"
+  - name: "【010】正常编辑已创建的标签"
+    testcase: "/testcases/用户管理/用户标签管理/编辑标签/【010】正常编辑已创建的标签.yml"
+
+

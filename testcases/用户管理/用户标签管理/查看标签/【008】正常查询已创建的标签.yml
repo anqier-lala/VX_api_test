@@ -1,0 +1,10 @@
+- config:
+    name: "【008】正常查询已创建的标签"
+    base_url: ${ENV(URL)}
+
+- test:
+    name: '【008】正常查询已创建的标签'
+    api: "api/用户管理/用户标签管理/查看标签.yml"
+
+    validate:
+      - eq: ['status_code',200]

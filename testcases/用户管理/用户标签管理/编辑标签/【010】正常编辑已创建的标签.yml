@@ -1,0 +1,14 @@
+- config:
+    name: "正常编辑标签"
+    base_url: ${ENV(URL)}
+
+- test:
+    name: '【010】正常编辑已创建的标签'
+    api: "api/用户管理/用户标签管理/编辑标签.yml"
+    variables:
+      tag_id: "130"
+      tag_name: "自改7"
+
+    validate:
+      - eq: ['status_code',200]
+      - eq: [content.errcode,0]

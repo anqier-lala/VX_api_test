@@ -1,0 +1,13 @@
+- config:
+    name: "标签名长度超过30个字节返回45158"
+    base_url: ${ENV(URL)}
+
+- test:
+    name: '【007】标签名长度超过30个字节返回45158'
+    api: "api/用户管理/用户标签管理/创建标签.yml"
+    variables:
+      tag_name: "创建创建创建创建创建1234567890ab"
+    extract:
+      - errcode: content.errcode
+    validate:
+      - eq: [$errcode,45158]

@@ -1,0 +1,21 @@
+- config:
+    name: "从开始开发模块中获取token-删除标签"
+    base_url: ${ENV(URL)}
+
+#- test:
+#    name: "【001】验证正常调用接口获取token值.yml"
+#    testcase: "testcases/开始开发/获取access_token/【001】验证正常调用接口获取token值.yml"
+
+- test:
+    name: '删除标签'
+    api: "api/用户管理/用户标签管理/删除标签.yml"
+    setup_hooks:
+      - ${setup_step(删除标签)}
+    teardown_hooks:
+      - ${teardown_step(删除标签)}
+    variables:
+      tag_id: $tag_id
+
+    validate:
+      - eq: ['status_code',200]
+      - eq: [content.errcode,0]

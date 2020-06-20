@@ -1,0 +1,15 @@
+- config:
+    name: "正常创建标签"
+    base_url: ${ENV(URL)}
+    export:
+      - tag_id
+- test:
+    name: '【005】验证正常创建标签'
+    api: "api/用户管理/用户标签管理/创建标签.yml"
+    variables:
+      tag_name: "115"
+    extract:
+      - tag_id: content.tag.id
+      - tag_name: content.tag.name
+    validate:
+      - eq: [$tag_name,"115"]

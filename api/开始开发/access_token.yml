@@ -1,0 +1,12 @@
+name: "get access_token"
+base_url: ${ENV(URL)}
+request:
+  url: /cgi-bin/token
+  method: GET
+  params:
+      grant_type: $grant_type
+      appid: $appid
+      secret: $secret
+
+validate:
+  - eq: ['status_code',200]

@@ -1,0 +1,17 @@
+- config:
+    name: "获取access_token"
+    export:
+      - token_id
+- test:
+    name: "【001】验证正常调用接口获取token值"
+    api: "api/开始开发/access_token.yml"
+    variables:
+      grant_type: 'client_credential'
+      appid: 'wxc036fc4ba09c7c16'
+      secret: 'bc85b7bc56a9c6bb2d7011f758ab9d7e'
+    extract:
+      - token_id: content.access_token
+    validate:
+      - eq: ['status_code',200]
+      - eq: [content.expires_in,7200]
+
